@@ -138,7 +138,7 @@ func (b *btcdBlockReaderWriter) TxOutSpent(hash []byte,
 		return nil, MakeError(ErrInvalidHash, str, err)
 	}
 
-	txOutInfo, err := b.Client.GetTxOut(shaHash, int(index), mempool)
+	txOutInfo, err := b.Client.GetTxOut(shaHash, index, mempool)
 	if err != nil {
 		str := fmt.Sprintf("failed to get tx out info %x", hash)
 		return nil, MakeError(ErrBlockRead, str, err)
