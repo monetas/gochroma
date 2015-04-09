@@ -5,9 +5,9 @@ import (
 	"encoding/hex"
 	"fmt"
 
-	"github.com/monetas/btcnet"
-	"github.com/monetas/btcrpcclient"
-	"github.com/monetas/btcutil"
+	btcnet "github.com/btcsuite/btcd/chaincfg"
+	"github.com/btcsuite/btcrpcclient"
+	"github.com/btcsuite/btcutil"
 )
 
 // btcdBlockReaderWriter is a specific BlockReaderWriter that uses btcd in order

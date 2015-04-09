@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"sort"
 
-	"github.com/monetas/btcwire"
+	btcwire "github.com/btcsuite/btcd/wire"
 )
 
 var (

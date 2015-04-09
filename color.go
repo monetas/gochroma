@@ -6,8 +6,8 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/monetas/btcwire"
-	"github.com/monetas/fastsha256"
+	btcwire "github.com/btcsuite/btcd/wire"
+	"github.com/btcsuite/fastsha256"
 )
 
 type ColorValue uint64

@@ -7,8 +7,8 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/monetas/btcnet"
-	"github.com/monetas/btcrpcclient"
+	btcnet "github.com/btcsuite/btcd/chaincfg"
+	"github.com/btcsuite/btcrpcclient"
 	"github.com/monetas/gochroma"
 )
 
