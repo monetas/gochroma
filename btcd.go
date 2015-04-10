@@ -5,9 +5,9 @@ import (
 	"encoding/hex"
 	"fmt"
 
-	"github.com/monetas/btcnet"
-	"github.com/monetas/btcrpcclient"
-	"github.com/monetas/btcutil"
+	btcnet "github.com/btcsuite/btcd/chaincfg"
+	"github.com/btcsuite/btcrpcclient"
+	"github.com/btcsuite/btcutil"
 )
 
 // btcdBlockReaderWriter is a specific BlockReaderWriter that uses btcd in order
@@ -138,7 +138,7 @@ func (b *btcdBlockReaderWriter) TxOutSpent(hash []byte,
 		return nil, MakeError(ErrInvalidHash, str, err)
 	}
 
-	txOutInfo, err := b.Client.GetTxOut(shaHash, int(index), mempool)
+	txOutInfo, err := b.Client.GetTxOut(shaHash, index, mempool)
 	if err != nil {
 		str := fmt.Sprintf("failed to get tx out info %x", hash)
 		return nil, MakeError(ErrBlockRead, str, err)

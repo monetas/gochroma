@@ -7,8 +7,8 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/monetas/btcnet"
-	"github.com/monetas/btcrpcclient"
+	btcnet "github.com/btcsuite/btcd/chaincfg"
+	"github.com/btcsuite/btcrpcclient"
 	"github.com/monetas/gochroma"
 )
 
@@ -19,7 +19,7 @@ func TestNewBtcdBlockExplorerError(t *testing.T) {
 	// Setup
 	connConfig := &btcrpcclient.ConnConfig{
 		Proxy:        "%gh&%ij",
-		HttpPostMode: true,
+		HTTPPostMode: true,
 		DisableTLS:   true,
 	}
 
@@ -50,7 +50,7 @@ func TestBlockCount(t *testing.T) {
 	net := &btcnet.TestNet3Params
 	connConfig := &btcrpcclient.ConnConfig{
 		Host:         ts.URL[7:],
-		HttpPostMode: true,
+		HTTPPostMode: true,
 		DisableTLS:   true,
 	}
 	blockReaderWriter, err := gochroma.NewBtcdBlockExplorer(net, connConfig)
@@ -79,7 +79,7 @@ func TestBlockHash(t *testing.T) {
 	net := &btcnet.TestNet3Params
 	connConfig := &btcrpcclient.ConnConfig{
 		Host:         ts.URL[7:],
-		HttpPostMode: true,
+		HTTPPostMode: true,
 		DisableTLS:   true,
 	}
 	b, err := gochroma.NewBtcdBlockExplorer(net, connConfig)
@@ -109,7 +109,7 @@ func TestBlockHashError(t *testing.T) {
 	net := &btcnet.TestNet3Params
 	connConfig := &btcrpcclient.ConnConfig{
 		Host:         ts.URL[7:],
-		HttpPostMode: true,
+		HTTPPostMode: true,
 		DisableTLS:   true,
 	}
 	b, err := gochroma.NewBtcdBlockExplorer(net, connConfig)
@@ -142,7 +142,7 @@ func TestRawBlock(t *testing.T) {
 	net := &btcnet.TestNet3Params
 	connConfig := &btcrpcclient.ConnConfig{
 		Host:         ts.URL[7:],
-		HttpPostMode: true,
+		HTTPPostMode: true,
 		DisableTLS:   true,
 	}
 	b, err := gochroma.NewBtcdBlockExplorer(net, connConfig)
@@ -190,7 +190,7 @@ func TestRawBlockError(t *testing.T) {
 		net := &btcnet.TestNet3Params
 		connConfig := &btcrpcclient.ConnConfig{
 			Host:         ts.URL[7:],
-			HttpPostMode: true,
+			HTTPPostMode: true,
 			DisableTLS:   true,
 		}
 		b, err := gochroma.NewBtcdBlockExplorer(net, connConfig)
@@ -224,7 +224,7 @@ func TestRawTx(t *testing.T) {
 	net := &btcnet.TestNet3Params
 	connConfig := &btcrpcclient.ConnConfig{
 		Host:         ts.URL[7:],
-		HttpPostMode: true,
+		HTTPPostMode: true,
 		DisableTLS:   true,
 	}
 	b, err := gochroma.NewBtcdBlockExplorer(net, connConfig)
@@ -271,7 +271,7 @@ func TestRawTxError(t *testing.T) {
 		net := &btcnet.TestNet3Params
 		connConfig := &btcrpcclient.ConnConfig{
 			Host:         ts.URL[7:],
-			HttpPostMode: true,
+			HTTPPostMode: true,
 			DisableTLS:   true,
 		}
 		b, err := gochroma.NewBtcdBlockExplorer(net, connConfig)
@@ -305,7 +305,7 @@ func TestTxBlockHash(t *testing.T) {
 	net := &btcnet.TestNet3Params
 	connConfig := &btcrpcclient.ConnConfig{
 		Host:         ts.URL[7:],
-		HttpPostMode: true,
+		HTTPPostMode: true,
 		DisableTLS:   true,
 	}
 	b, err := gochroma.NewBtcdBlockExplorer(net, connConfig)
@@ -353,7 +353,7 @@ func TestTxBlockHashError(t *testing.T) {
 		net := &btcnet.TestNet3Params
 		connConfig := &btcrpcclient.ConnConfig{
 			Host:         ts.URL[7:],
-			HttpPostMode: true,
+			HTTPPostMode: true,
 			DisableTLS:   true,
 		}
 		b, err := gochroma.NewBtcdBlockExplorer(net, connConfig)
@@ -387,7 +387,7 @@ func TestMempoolTxs(t *testing.T) {
 	net := &btcnet.TestNet3Params
 	connConfig := &btcrpcclient.ConnConfig{
 		Host:         ts.URL[7:],
-		HttpPostMode: true,
+		HTTPPostMode: true,
 		DisableTLS:   true,
 	}
 	b, err := gochroma.NewBtcdBlockExplorer(net, connConfig)
@@ -416,7 +416,7 @@ func TestMempoolTxsError(t *testing.T) {
 	net := &btcnet.TestNet3Params
 	connConfig := &btcrpcclient.ConnConfig{
 		Host:         ts.URL[7:],
-		HttpPostMode: true,
+		HTTPPostMode: true,
 		DisableTLS:   true,
 	}
 	b, err := gochroma.NewBtcdBlockExplorer(net, connConfig)
@@ -454,7 +454,7 @@ func TestTxOutSpent(t *testing.T) {
 	net := &btcnet.TestNet3Params
 	connConfig := &btcrpcclient.ConnConfig{
 		Host:         ts.URL[7:],
-		HttpPostMode: true,
+		HTTPPostMode: true,
 		DisableTLS:   true,
 	}
 	b, err := gochroma.NewBtcdBlockExplorer(net, connConfig)
@@ -503,7 +503,7 @@ func TestTxOutSpentError(t *testing.T) {
 		net := &btcnet.TestNet3Params
 		connConfig := &btcrpcclient.ConnConfig{
 			Host:         ts.URL[7:],
-			HttpPostMode: true,
+			HTTPPostMode: true,
 			DisableTLS:   true,
 		}
 		b, err := gochroma.NewBtcdBlockExplorer(net, connConfig)
@@ -537,7 +537,7 @@ func TestPublishRawTx(t *testing.T) {
 	net := &btcnet.TestNet3Params
 	connConfig := &btcrpcclient.ConnConfig{
 		Host:         ts.URL[7:],
-		HttpPostMode: true,
+		HTTPPostMode: true,
 		DisableTLS:   true,
 	}
 	b, err := gochroma.NewBtcdBlockExplorer(net, connConfig)
@@ -586,7 +586,7 @@ func TestPublishRawTxError1(t *testing.T) {
 		net := &btcnet.TestNet3Params
 		connConfig := &btcrpcclient.ConnConfig{
 			Host:         ts.URL[7:],
-			HttpPostMode: true,
+			HTTPPostMode: true,
 			DisableTLS:   true,
 		}
 		b, err := gochroma.NewBtcdBlockExplorer(net, connConfig)

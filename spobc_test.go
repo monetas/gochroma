@@ -4,8 +4,8 @@ import (
 	"crypto/rand"
 	"testing"
 
-	"github.com/monetas/btcutil"
-	"github.com/monetas/btcwire"
+	btcwire "github.com/btcsuite/btcd/wire"
+	"github.com/btcsuite/btcutil"
 	"github.com/monetas/gochroma"
 )
 
